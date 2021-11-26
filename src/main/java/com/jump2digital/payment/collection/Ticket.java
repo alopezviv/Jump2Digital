@@ -1,9 +1,11 @@
 package com.jump2digital.payment.collection;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mongodb.lang.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,8 +13,9 @@ import java.util.UUID;
 public class Ticket {
     @Id
     private UUID id;
-    private List<Product> products;
-    private double amount;
+    private List<Product> products = new ArrayList<>();
+    private double amount = 0;
+    @NonNull
     private PaymentType paymentType;
 
     public Ticket(){}

@@ -1,6 +1,7 @@
 package com.jump2digital.payment.collection;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mongodb.lang.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +13,7 @@ public class Product {
     private UUID id;
     private String name;
     private double price;
+    @NonNull
     private ProductType description;
     public Product(){}
 
