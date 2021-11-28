@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
 import java.util.UUID;
 
 public class TicketUUIDListener extends AbstractMongoEventListener<Ticket> {
+    //Intercepta el objeto antes de ser persistido y setea su id como una UUID
     public void onBeforeConvert(BeforeConvertEvent<Ticket> event) {
         Ticket t = event.getSource();
         if(t.isNew()) {

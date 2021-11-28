@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 @Configuration
 @EnableMongoAuditing
 public class MongoConfiguration {
-
+    //Beans para permitir introducir la UUID
     @Bean
     public TicketUUIDListener generateTicketUUIDListener() {
         return new TicketUUIDListener();

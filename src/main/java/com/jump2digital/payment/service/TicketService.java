@@ -27,6 +27,7 @@ public class TicketService {
     public void postTicket(Ticket t){
         ticketDao.save(t);
     }
+    //Search a ticket by UUID and deletes it
     public void deleteTicket(UUID id){
         Ticket t = ticketDao.findById(id).get();
         ticketDao.delete(t);
@@ -49,6 +50,7 @@ public class TicketService {
         t.setAmount(amount);
 
     }
+    //Takes all the tickets and calculates the total amount, the number of payments types bu type and the number of products by type
     public AnaliticsDto getAnaliticsDto(){
         double totalAmount=0.0;
         int laptops=0;

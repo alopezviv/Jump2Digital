@@ -21,6 +21,7 @@ public class ProductService {
     public void modifyProduct(Product p){
         productDao.save(p);
     }
+    //primero busca un producto por su UUID y luego lo borra
     public void deleteProdut(UUID id){
         Product p = getProduct(id);
         productDao.delete(p);
